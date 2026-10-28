@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Apply for Leave | Leave Management</title>
+</head>
+
+<body>
+    <h1>Apply for Leave</h1>
+    <form action="{{url_for('apply_leave')}}" method="POST">
+        <label for="employee_id">Employee ID</label>
+        <input type="number" id="employee_id" name="employee_id" required>
+        <br>
+        <br>
+        <label for="leave_type">Leave Type:</label>
+        <select id="leave_type" name="leave_type" required>
+            <option value="">Select Leave Type</option>
+            <option value="Paid Leave">Paid Leave</option>
+            <option value="Sick Leave">Sick Leave</option>
+            <option value="Casual Leave">Casual Leave</option>
+        </select>
+        <br>
+        <br>
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date" required>
+        <br>
+        <br>
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date" required>
+        <br>
+        <br>
+        <label for="reason">Reason:</label>
+        <textarea id="reason" name="reason" required></textarea>
+        <br>
+        <br>
+        <button type="submit">Submit Leave Application</button>
+    </form>
+    <br>
+    <a href="{{url_for('home')}}">Back to Dashboard</a>
+</body>
+
+</html>

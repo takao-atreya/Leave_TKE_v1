@@ -13,6 +13,27 @@ class LeaveRequest(db.Model):
     reason = db.Column(db.Text, nullable = False)
     status = db.Column(db.String(20), nullable = False, default = "Pending")
 
+def add_leave(employee_id, leave_type, start_date, end_date, reason):
+    new_leave = LeaveRequest(
+        employee_id = employee_id,
+        leave_type = leave_type,
+        start_date = start_date,
+        end_date = end_date,
+        reason = reason
+    )
 
+    db.session.add(new_leave)
+    db.session.commit()
+
+    return new_leave
+
+def view_leaves(employee_id):
+    leaves = db.session.execute(
+        db.select(LeaveRequest)
+        .filter_by(employee_id = employee_id)
+        .order_by(LeaveRequest.id.desc())
+    ).scalars().all()
+
+    return leaves
 
 
