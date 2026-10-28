@@ -1,0 +1,251 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --navy: #142b49;
+    --blue: #2563eb;
+    --blue-dark: #1d4ed8;
+    --background: #f4f7fb;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation */
+
+.navbar {
+    height: 76px;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.7px;
+}
+
+.logo-icon {
+    background: var(--blue);
+    color: white;
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+}
+
+.nav-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    background: #f1f5f9;
+    padding: 9px 15px;
+    border-radius: 20px;
+}
+
+/* Dashboard */
+
+.dashboard {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 75px 30px;
+    flex: 1;
+}
+
+/* Welcome */
+
+.welcome-section {
+    margin-bottom: 65px;
+}
+
+.eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--blue);
+    background: #e8efff;
+    padding: 9px 13px;
+    border-radius: 6px;
+    margin-bottom: 22px;
+}
+
+.welcome-section h1 {
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: var(--navy);
+    margin-bottom: 15px;
+}
+
+.welcome-section p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+/* Section heading */
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    font-size: 23px;
+    color: var(--navy);
+    margin-bottom: 9px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* Action cards */
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.action-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(20, 43, 73, 0.08);
+}
+
+.card-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 28px;
+}
+
+.apply-icon {
+    background: #e8efff;
+    color: var(--blue);
+}
+
+.history-icon {
+    background: #e8f7ef;
+    color: #16865b;
+}
+
+.action-card h3 {
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 12px;
+}
+
+.action-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.card-button {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: white;
+    background: var(--blue);
+    padding: 15px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.card-button:hover {
+    background: var(--blue-dark);
+}
+
+.card-button span {
+    font-size: 19px;
+}
+
+/* Footer */
+
+.footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Responsive layout */
+
+@media (max-width: 700px) {
+    .navbar {
+        padding: 0 22px;
+    }
+
+    .dashboard {
+        padding: 45px 22px;
+    }
+
+    .welcome-section {
+        margin-bottom: 45px;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .action-card {
+        padding: 27px;
+    }
+
+    .nav-label {
+        display: none;
+    }
+}

@@ -1,0 +1,214 @@
+/* =====================================
+   APPLY FOR LEAVE PAGE
+===================================== */
+
+.form-page {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 50px 24px 80px;
+    flex: 1;
+}
+
+/* Page heading */
+
+.form-header {
+    margin-bottom: 30px;
+}
+
+.back-link {
+    display: inline-block;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 28px;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: #2563eb;
+}
+
+.form-header h1 {
+    font-size: 34px;
+    font-weight: 800;
+    color: #142b49;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+}
+
+.form-header p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Main form card */
+
+.form-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 40px;
+    box-shadow: 0 8px 30px rgba(20, 43, 73, 0.04);
+}
+
+.form-card-heading {
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.form-card-heading h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #142b49;
+    margin-bottom: 8px;
+}
+
+.form-card-heading p {
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* Input groups */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-group label span {
+    color: #ef4444;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #1e293b;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 125px;
+    line-height: 1.6;
+}
+
+/* Date fields side by side */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Form buttons */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+    padding-top: 25px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.cancel-button,
+.submit-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 12px 22px;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cancel-button {
+    color: #475569;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+}
+
+.cancel-button:hover {
+    background: #e2e8f0;
+}
+
+.submit-button {
+    color: #ffffff;
+    background: #2563eb;
+    border: 1px solid #2563eb;
+}
+
+.submit-button:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* Mobile responsive */
+
+@media (max-width: 600px) {
+    .form-page {
+        padding: 35px 16px 60px;
+    }
+
+    .form-header h1 {
+        font-size: 28px;
+    }
+
+    .form-card {
+        padding: 25px 20px;
+        border-radius: 14px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .cancel-button,
+    .submit-button {
+        width: 100%;
+    }
+}
