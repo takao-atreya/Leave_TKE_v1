@@ -4,94 +4,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Apply for Leave | LeaveFlow</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='apply_leave_style.css') }}">
 </head>
 
-<body>
+<body class="apply-body">
 
-    <header class="navbar">
-        <div class="logo">
-            <span class="logo-icon">L</span>
+    <!-- NAVIGATION BAR -->
+    <header class="apply-navbar">
+
+        <div class="apply-navbar-logo">
+            <span class="apply-navbar-icon">L</span>
             <span>LeaveFlow</span>
         </div>
-        <span class="nav-label">Employee Portal</span>
+
+        <span class="apply-navbar-label">
+            Employee Portal
+        </span>
+
     </header>
 
-    <main class="form-page">
+    <!-- MAIN CONTENT -->
+    <main class="apply-page">
 
-        <div class="form-header">
-            <a href="{{ url_for('home') }}" class="back-link">
+        <div class="apply-heading">
+
+            <a href="{{ url_for('home') }}" class="apply-back">
                 ← Back to Dashboard
             </a>
 
             <h1>Apply for Leave</h1>
-            <p>Fill in the details below to submit your leave application.</p>
+
+            <p>
+                Submit a new leave application by completing
+                the form below.
+            </p>
+
         </div>
 
-        <div class="form-card">
+        <!-- FORM CARD -->
+        <section class="apply-card">
 
-            <div class="form-card-heading">
-                <h2>Leave Application</h2>
-                <p>Please provide accurate information for your request.</p>
+            <div class="apply-card-header">
+                <h2>Leave Application Form</h2>
+                <p>Please provide the required information.</p>
             </div>
 
-            <form action="{{ url_for('apply_leave') }}" method="POST">
+            <form action="{{ url_for('apply_leave') }}" method="POST" class="apply-form">
 
-                <div class="form-group">
-                    <label for="employee_id">Employee ID <span>*</span></label>
+                <!-- EMPLOYEE ID -->
+                <div class="apply-field">
+
+                    <label for="employee_id">
+                        Employee ID
+                    </label>
+
                     <input type="number" id="employee_id" name="employee_id" placeholder="Enter your employee ID"
                         min="1" required>
+
                 </div>
 
-                <div class="form-group">
-                    <label for="leave_type">Leave Type <span>*</span></label>
+                <!-- LEAVE TYPE -->
+                <div class="apply-field">
+
+                    <label for="leave_type">
+                        Leave Type
+                    </label>
+
                     <select id="leave_type" name="leave_type" required>
-                        <option value="">Select leave type</option>
-                        <option value="Paid Leave">Paid Leave</option>
-                        <option value="Sick Leave">Sick Leave</option>
-                        <option value="Casual Leave">Casual Leave</option>
+                        <option value="" disabled selected>
+                            Select leave type
+                        </option>
+
+                        <option value="Paid Leave">
+                            Paid Leave
+                        </option>
+
+                        <option value="Sick Leave">
+                            Sick Leave
+                        </option>
+
+                        <option value="Casual Leave">
+                            Casual Leave
+                        </option>
                     </select>
+
                 </div>
 
-                <div class="form-row">
+                <!-- DATE FIELDS -->
+                <div class="apply-date-row">
 
-                    <div class="form-group">
-                        <label for="start_date">Start Date <span>*</span></label>
+                    <div class="apply-field">
+
+                        <label for="start_date">
+                            Start Date
+                        </label>
+
                         <input type="date" id="start_date" name="start_date" required>
+
                     </div>
 
-                    <div class="form-group">
-                        <label for="end_date">End Date <span>*</span></label>
+                    <div class="apply-field">
+
+                        <label for="end_date">
+                            End Date
+                        </label>
+
                         <input type="date" id="end_date" name="end_date" required>
+
                     </div>
 
                 </div>
 
-                <div class="form-group">
-                    <label for="reason">Reason for Leave <span>*</span></label>
+                <!-- REASON -->
+                <div class="apply-field">
+
+                    <label for="reason">
+                        Reason for Leave
+                    </label>
+
                     <textarea id="reason" name="reason" rows="5"
-                        placeholder="Briefly explain the reason for your leave..." required></textarea>
+                        placeholder="Briefly explain your reason for requesting leave..." required></textarea>
+
                 </div>
 
-                <div class="form-actions">
-                    <a href="{{ url_for('home') }}" class="cancel-button">
+                <!-- BUTTONS -->
+                <div class="apply-actions">
+
+                    <a href="{{ url_for('home') }}" class="apply-cancel-btn">
                         Cancel
                     </a>
 
-                    <button type="submit" class="submit-button">
-                        Submit Application →
+                    <button type="submit" class="apply-submit-btn">
+                        Submit Application
                     </button>
+
                 </div>
 
             </form>
-        </div>
+
+        </section>
 
     </main>
 
-    <footer class="footer">
-        <p>© 2026 LeaveFlow · Employee Leave Management System</p>
+    <!-- FOOTER -->
+    <footer class="apply-footer">
+        <p>
+            © 2026 LeaveFlow · Employee Leave Management System
+        </p>
     </footer>
 
 </body>

@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from datetime import date
-from database import db, add_leave
+from database import db, add_leave, view_leaves
 
 app = Flask(__name__)
 
@@ -45,9 +45,15 @@ def apply_leave():
             end_date,
             reason
         )
-    return redirect(url_for("home"))
+        return redirect(url_for("home"))
 
-    return render_template(apply_leave.html)
+    return render_template("apply_leave.html")
+
+@app.route("/history")
+def leave_history():
+    employee_id = 1950
+    leaves = view_leaves(employee_id)
+    return render_template("leave_history.html", leaves = leaves)
 
 
 

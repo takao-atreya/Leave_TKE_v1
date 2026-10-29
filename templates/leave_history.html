@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Leave History | LeaveFlow</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='leave_history_style.css') }}">
+</head>
+
+<body class="history-body">
+
+    <!-- NAVIGATION BAR -->
+    <header class="history-navbar">
+
+        <div class="history-navbar-logo">
+            <span class="history-navbar-icon">L</span>
+            <span>LeaveFlow</span>
+        </div>
+
+        <span class="history-navbar-label">
+            Employee Portal
+        </span>
+
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="history-page">
+
+        <div class="history-heading">
+
+            <a href="{{ url_for('home') }}" class="history-back">
+                ← Back to Dashboard
+            </a>
+
+            <h1>Leave History</h1>
+
+            <p>
+                Track your submitted leave applications
+                and their approval status.
+            </p>
+
+        </div>
+
+        <!-- HISTORY CARD -->
+        <section class="history-card">
+
+            <div class="history-card-header">
+
+                <div>
+                    <h2>My Leave Applications</h2>
+                    <p>All your submitted leave requests</p>
+                </div>
+
+                <a href="{{ url_for('apply_leave') }}" class="history-apply-btn">
+                    + Apply for Leave
+                </a>
+
+            </div>
+
+            <!-- HISTORY TABLE -->
+            <div class="history-table-wrapper">
+
+                <table class="history-table">
+
+                    <thead>
+                        <tr>
+                            <th>Request ID</th>
+                            <th>Leave Type</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Reason</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        {% for leave in leaves %}
+
+                        <tr>
+
+                            <td class="request-id">
+                                #{{ leave.id }}
+                            </td>
+
+                            <td>
+                                {{ leave.leave_type }}
+                            </td>
+
+                            <td>
+                                {{ leave.start_date }}
+                            </td>
+
+                            <td>
+                                {{ leave.end_date }}
+                            </td>
+
+                            <td class="reason-cell">
+                                {{ leave.reason }}
+                            </td>
+
+                            <td>
+                                <span class="history-status status-{{ leave.status|lower }}">
+                                    {{ leave.status }}
+                                </span>
+                            </td>
+
+                        </tr>
+
+                        {% else %}
+
+                        <tr>
+                            <td colspan="6" class="history-empty">
+                                No leave applications found.
+                            </td>
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="history-footer">
+        <p>
+            © 2026 LeaveFlow · Employee Leave Management System
+        </p>
+    </footer>
+
+</body>
+
+</html>

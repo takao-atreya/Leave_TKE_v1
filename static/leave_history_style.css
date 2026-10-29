@@ -1,0 +1,401 @@
+/* ==========================================
+   LEAVE HISTORY PAGE
+========================================== */
+
+/* Reset and page layout */
+
+.history-body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f7fb;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.history-body *,
+.history-body *::before,
+.history-body *::after {
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   TOP NAVIGATION BAR
+========================================== */
+
+.history-navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    min-height: 72px;
+    flex-shrink: 0;
+
+    padding: 0 40px;
+    margin: 0;
+
+    background-color: #142b49;
+    color: #ffffff;
+
+    position: relative;
+    z-index: 10;
+}
+
+/* Logo container */
+
+.history-navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Logo icon */
+
+.history-navbar-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 36px;
+    height: 36px;
+
+    background-color: #ffffff;
+    color: #142b49;
+
+    border-radius: 9px;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+/* Right navbar label */
+
+.history-navbar-label {
+    color: #cbd5e1;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.history-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 24px 80px;
+    flex: 1;
+}
+
+/* Page heading */
+
+.history-heading {
+    margin-bottom: 32px;
+}
+
+.history-back {
+    display: inline-block;
+    margin-bottom: 22px;
+
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.history-back:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+.history-heading h1 {
+    margin: 0 0 10px;
+
+    font-size: 34px;
+    font-weight: 800;
+    color: #142b49;
+}
+
+.history-heading p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #64748b;
+}
+
+/* ==========================================
+   HISTORY CARD
+========================================== */
+
+.history-card {
+    width: 100%;
+    background-color: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 30px rgba(20, 43, 73, 0.05);
+}
+
+/* Card header */
+
+.history-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding: 28px 30px;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.history-card-header h2 {
+    margin: 0 0 6px;
+
+    color: #142b49;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.history-card-header p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+/* Apply button */
+
+.history-apply-btn {
+    display: inline-block;
+
+    padding: 12px 20px;
+    border-radius: 9px;
+
+    background-color: #142b49;
+    color: #ffffff;
+
+    text-decoration: none;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    transition: background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.history-apply-btn:hover {
+    background-color: #23476f;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   HISTORY TABLE
+========================================== */
+
+.history-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13px;
+}
+
+.history-table thead {
+    background-color: #f8fafc;
+}
+
+.history-table th {
+    padding: 18px 20px;
+
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.history-table td {
+    padding: 20px;
+
+    color: #334155;
+    vertical-align: middle;
+
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.history-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.history-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Request ID */
+
+.history-table .request-id {
+    color: #2563eb;
+    font-weight: 700;
+}
+
+/* Reason */
+
+.history-table .reason-cell {
+    min-width: 160px;
+    max-width: 260px;
+    overflow-wrap: anywhere;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   STATUS BADGES
+========================================== */
+
+.history-status {
+    display: inline-block;
+
+    padding: 7px 13px;
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Pending */
+
+.history-status.status-pending {
+    background-color: #fff7ed;
+    color: #c2410c;
+}
+
+/* Approved */
+
+.history-status.status-approved {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+/* Rejected */
+
+.history-status.status-rejected {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+/* Empty history */
+
+.history-table .history-empty {
+    padding: 50px 20px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.history-footer {
+    width: 100%;
+    padding: 22px 20px;
+
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+
+    text-align: center;
+}
+
+.history-footer p {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 768px) {
+
+    .history-navbar {
+        min-height: 64px;
+        padding: 0 20px;
+    }
+
+    .history-navbar-logo {
+        font-size: 18px;
+    }
+
+    .history-navbar-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 17px;
+    }
+
+    .history-navbar-label {
+        font-size: 11px;
+    }
+
+    .history-page {
+        padding: 35px 16px 60px;
+    }
+
+    .history-heading h1 {
+        font-size: 28px;
+    }
+
+    .history-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 22px;
+    }
+
+    .history-apply-btn {
+        width: 100%;
+    }
+
+    .history-table {
+        min-width: 800px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .history-navbar {
+        padding: 0 14px;
+    }
+
+    .history-navbar-logo {
+        gap: 8px;
+        font-size: 16px;
+    }
+
+    .history-navbar-label {
+        font-size: 10px;
+    }
+
+    .history-heading h1 {
+        font-size: 25px;
+    }
+}

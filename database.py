@@ -13,6 +13,7 @@ class LeaveRequest(db.Model):
     reason = db.Column(db.Text, nullable = False)
     status = db.Column(db.String(20), nullable = False, default = "Pending")
 
+
 def add_leave(employee_id, leave_type, start_date, end_date, reason):
     new_leave = LeaveRequest(
         employee_id = employee_id,
